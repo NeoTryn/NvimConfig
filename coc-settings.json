@@ -1,0 +1,32 @@
+{
+	"languageserver": {
+		"clangd": {
+			"command": "clangd",
+			"filetypes": ["c", "cpp", "objc", "objcpp", "h", "hpp"]
+		},
+        "lua": {
+      "command": "lua-language-server",
+      "filetypes": ["lua"],
+      "settings": {
+        "Lua": {
+          "runtime": {
+            "version": "LuaJIT",
+            "path": vim.split(package.path, ";")
+          },
+          "diagnostics": {
+            "globals": ["vim"]
+          },
+          "workspace": {
+            "library": {
+              [vim.fn.expand("$VIMRUNTIME/lua")]: true,
+              [vim.fn.stdpath("config") .. "/lua"]: true
+            }
+          },
+          "telemetry": {
+                "enable": false
+            }
+                }
+            }
+        } 
+	}
+}
